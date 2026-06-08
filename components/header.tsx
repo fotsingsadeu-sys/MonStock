@@ -10,8 +10,9 @@ export default function Header(){
       <div className="">        
           <ul className="flex gap-12">
             <li className="hover:text-white text-2xl"><Link href="/accueil">Accueil</Link></li>
-            <li className="hover:text-white text-2xl"><Link href="/vente">Vente</Link></li>
             <li className="hover:text-white text-2xl"><Link href="/stock">Stock</Link></li>
+            <li className="hover:text-white text-2xl"><Link href="/vente">Vente</Link></li>
+            <li className="hover:text-white text-2xl"><Link href="/catalogue">Catalogue</Link></li>
           </ul>     
       </div>
       <div className="flex gap-4">   
