@@ -1,3 +1,5 @@
+"use client"
+
 export default function Catalogue(){
     return(
         <div  className="m-10 text-center bg-blue-950 text-slate-300 p-15 rounded-lg">

@@ -1,50 +1,8 @@
-"use client";
-import { useEffect,useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home(){
-  const [todos, setTodos] = useState([]);
-  const [title, setTitle] = useState("");
-  const fetchTodos = async () => {
-    const res = await fetch("/api/todos");
-    const data = await res.json();
-    setTodos(data);
-  };
-  useEffect(()=>{
-    fetchTodos();
-  }, []);
-
-  const addTodo = async () => {
-    if (!title) return;
-
-    await fetch("/api/todos",{
-      method: "POST",
-      headers: { "Content-Type": "application/json"},
-      body: JSON.stringify({title}),
-    });
-    setTitle("");
-    fetchTodos();
-  };
-
-  const toggleTodo = async (id) => {
-    await fetch ("/api/todos",{
-      method: "PUT",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id}),
-    });
-    fetchTodos();
-  };
-
-  const deleteTodo= async(id) => {
-    await fetch("/api/todos",{
-      method:"DELETE",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({id}),
-    });
-
-    fetchTodos();
-  };
 
   return (
     <div className="text-center mt-11">    
