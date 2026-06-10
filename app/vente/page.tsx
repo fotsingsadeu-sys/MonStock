@@ -2,6 +2,7 @@
 import { useEffect,useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import 'remixicon/fonts/remixicon.css'
 
 export default function Vente(){
   const [ventes, setVentes] = useState([]);
@@ -61,8 +62,8 @@ export default function Vente(){
                   <span style={{textDecoration: vente.completed? "line-trough": "none",}} >                
                   {vente.title}
                   </span>
-                  <button onClick={() => toggleVente(vente.id)}> BON </button>
-                  <button onClick={() => deleteVente(vente.id)}>PAS BON</button>
+                  <button onClick={() => toggleVente(vente.id)}><i className="ri-check-line"></i>   </button>
+                  <button onClick={() => deleteVente(vente.id)}><i className="ri-close-line"></i> </button>
                   </li>
                 )
                 )}

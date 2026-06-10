@@ -2,6 +2,7 @@
 import { useEffect,useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import 'remixicon/fonts/remixicon.css'
 
 export default function Stock(){
   const [stocks, setStocks] = useState([]);
@@ -47,19 +48,20 @@ export default function Stock(){
   };
 
     return(
-        <div className="m-10 text-center bg-blue-950 text-slate-300 p-15 rounded-lg">
+        <div className="m-10 text-center bg-blue-950 text-slate-300 p-15 rounded-lg box-border">
             <h1 className="text-4xl">Gérer vos stocks de manière simplifiée </h1>
-            <div className="flex justify-center items-center gap-50 mt-5">
-                <input value={title} onChange={(e) =>  setTitle(e.target.value)} placeholder="Nouvelle tache"/> 
-                <button onClick={addStock} className="font-medium flex gap-2 bg-sky-500 p-3  rounded-md mt-1 text-slate-600 hover:text-white"><i className="ri-add-line"></i>Ajouter un produit</button>
+            <div className="flex justify-center items-center gap-20 mt-5">
+                <input value={title} onChange={(e) =>  setTitle(e.target.value)} placeholder="Entrer en stock"/> 
+                
+                <button onClick={addStock} className="font-medium flex gap-2 bg-sky-500 p-3  rounded-md mt-1 ml-5 text-slate-600 hover:text-white"><i className="ri-add-line"></i>Ajouter un produit</button>
                 <ul>
                     {stocks.map((stock)=> (
                         <li key={stock.id}>
                         <span style={{textDecoration: stock.completed? "line-trough": "none",}} >
                             {stock.title}
                         </span>
-                        <button onClick={() => toggleStock(stock.id)}> BON </button>
-                        <button onClick={() => deleteStock(stock.id)}>PAS BON</button>
+                        <button onClick={() => toggleStock(stock.id)}> <i className="ri-check-line"></i> </button>
+                        <button onClick={() => deleteStock(stock.id)}> <i className="ri-close-line"></i></button>
                         </li> ))}
                 </ul>
             </div>
