@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-let catalogues = [];
+const catalogues = [];
 
 export async function GET(){
     return NextResponse.json(catalogues);
