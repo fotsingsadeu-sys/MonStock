@@ -5,8 +5,6 @@ interface Catalogue {
     title: string;
     completed: boolean;
 }
-let catalogue: Catalogue[] = [];
-
 let catalogues: Catalogue[]= [];
 
 export async function GET(){

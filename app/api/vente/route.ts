@@ -1,6 +1,11 @@
 import {NextResponse} from "next/server";
 
-let ventes = [];
+interface Vente {
+    id: number;
+    title: string;
+    completed: boolean;
+}
+let ventes: Vente[]= [];
 
 export async function GET(){
     return NextResponse.json(ventes);
