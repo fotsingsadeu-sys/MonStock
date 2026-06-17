@@ -3,8 +3,13 @@ import { useEffect,useState } from "react";
 import Link from "next/link";
 import 'remixicon/fonts/remixicon.css'
 
+interface Catalogue {
+  id: number;
+  title: string;
+  completed: boolean;
+}
 export default function Catalogue(){
-      const [catalogues, setCatalogues] = useState([]);
+      const [catalogues, setCatalogues] = useState<Catalogue[]>([]);
       const [title, setTitle] = useState("");
     
       const fetchCatalogues = async () => {

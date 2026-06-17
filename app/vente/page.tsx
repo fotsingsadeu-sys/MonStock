@@ -4,8 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import 'remixicon/fonts/remixicon.css'
 
+interface Vente {
+  id: number;
+  title: string;
+  completed: boolean;
+}
 export default function Vente(){
-  const [ventes, setVentes] = useState([]);
+  const [ventes, setVentes] = useState<Vente[]>([]);
   const [title, setTitle] = useState("");
 
   const fetchVentes = async () => {

@@ -4,8 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import 'remixicon/fonts/remixicon.css'
 
+interface Stock {
+  id: number;
+  title: string;
+  completed: boolean;
+}
 export default function Stock(){
-  const [stocks, setStocks] = useState([]);
+  const [stocks, setStocks] = useState<Stock[]>([]);
   const [title, setTitle] = useState("");
 
   const fetchStocks = async () => {
