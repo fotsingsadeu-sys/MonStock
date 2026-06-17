@@ -1,6 +1,13 @@
 import { NextResponse } from "next/server";
 
-let catalogues = [];
+interface Catalogue {
+    id: number;
+    title: string;
+    completed: boolean;
+}
+let catalogue: Catalogue[] = [];
+
+let catalogues: Catalogue[]= [];
 
 export async function GET(){
     return NextResponse.json(catalogues);
