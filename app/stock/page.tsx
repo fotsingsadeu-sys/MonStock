@@ -29,7 +29,7 @@ export default function Stock(){
     fetchStocks();
   };
 
-  const toggleStock = async (id) => {
+  const toggleStock = async (id: number) => {
     await fetch ("/api/stock",{
       method: "PUT",
       headers: {"Content-Type": "application/json"},
@@ -38,7 +38,7 @@ export default function Stock(){
     fetchStocks();
   };
 
-  const deleteStock= async(id) => {
+  const deleteStock= async(id: number) => {
     await fetch("/api/stock",{
       method:"DELETE",
       headers: {"Content-Type": "application/json"},

@@ -28,7 +28,7 @@ export default function Catalogue(){
         fetchCatalogues();
       };
     
-      const toggleCatalogue = async (id) => {
+      const toggleCatalogue = async (id: number) => {
         await fetch ("/api/catalogue",{
           method: "PUT",
           headers: {"Content-Type": "application/json"},
@@ -37,7 +37,7 @@ export default function Catalogue(){
         fetchCatalogues();
       };
     
-      const deleteCatalogue= async(id) => {
+      const deleteCatalogue= async(id: number) => {
         await fetch("/api/catalogue",{
           method:"DELETE",
           headers: {"Content-Type": "application/json"},

@@ -29,7 +29,7 @@ export default function Vente(){
     fetchVentes();
   };
 
-  const toggleVente = async (id) => {
+  const toggleVente = async (id:number) => {
     await fetch ("/api/vente",{
       method: "PUT",
       headers: {"Content-Type": "application/json"},
@@ -38,7 +38,7 @@ export default function Vente(){
     fetchVentes();
   };
 
-  const deleteVente= async(id) => {
+  const deleteVente= async(id: number) => {
     await fetch("/api/vente",{
       method:"DELETE",
       headers: {"Content-Type": "application/json"},
